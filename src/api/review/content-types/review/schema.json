@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "rating": {
+      "type": "enumeration",
+      "enum": [
+        "One",
+        "Two",
+        "Three",
+        "Four",
+        "Five"
+      ],
+      "required": true
+    },
+    "restaurant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::restaurant.restaurant",
+      "inversedBy": "reviews"
+    }
+  }
+}
